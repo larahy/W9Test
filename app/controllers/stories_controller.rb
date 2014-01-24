@@ -12,7 +12,8 @@ class StoriesController < ApplicationController
   end
 
   def index
-    @stories = Story.all 
+    @stories = Story.most_popular(Story.all)
   end
+
 
 end

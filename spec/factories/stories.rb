@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :story do
-    title "My Boy Jack "
+    title "My Boy Jack"
     url "http://www.kiplingsociety.co.uk/poems_jack.htm"
   end
 end

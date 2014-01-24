@@ -22,7 +22,7 @@ describe 'Viewing story' do
       story2 = create(:story, title: 'Lord Lundy')
       vote1 = create(:vote, story_id: story1.id)
       visit '/stories'
-      expect(page).to have_content('Lord Lundy')
+      expect(page).to have_css 'h1:first', text: 'My Boy Jack'
     end
 
 
