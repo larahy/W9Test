@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W9test</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <a class="navbar-brand" href="/stories">HOME</a>
+  </div>
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li><a href="/stories/new">Share Story</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        <li><%= link_to('SIGN OUT', destroy_user_session_path, :method => :delete) %> </li>
+      <% else %> 
+        <li><%= link_to('SIGN IN', new_user_session_path) %> </li>
+      <% end %>
+      <% if user_signed_in? %>
+        <li><%= link_to('EDIT DETAILS', edit_user_registration_path) %> </li>
+      <% else %> 
+        <li><%= link_to('SIGN UP', new_user_registration_path) %> </li>
+      <% end %>
+    </ul>
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class='notice'>
+  <%= flash[:notice] %>
+</div>
+
+<div class='alert'>
+  <%= flash[:alert] %>
+</div>
+
+<%= yield %>
+
+</body>
+</html>

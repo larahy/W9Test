@@ -1,0 +1,13 @@
+<%= form_for @story do |form| %>
+
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+
+  <br>
+  <%= form.label :url %>
+  <%= form.text_area :url %>
+
+  <br>
+  <%= form.submit 'Share Story' %>
+
+<% end %>
