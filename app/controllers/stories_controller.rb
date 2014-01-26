@@ -7,12 +7,20 @@ class StoriesController < ApplicationController
   end
 
   def create
-    Story.create params[:story].permit(:title, :url)
+    @story = Story.new params[:story].permit(:title, :url)
+    @story.user = current_user
+    @story.save 
     redirect_to '/stories'
   end
 
   def index
     @stories = Story.most_popular(Story.all)
+  end
+
+  def destroy
+    @story = Story.find(params[:id])
+    @story.destroy
+    redirect_to '/stories'
   end
 
 

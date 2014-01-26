@@ -4,8 +4,8 @@ class VotesController < ApplicationController
   def create
     @story = Story.find(params[:story_id])
     @vote = Vote.new
-    @vote.user_id = current_user.id
-    @vote.story_id = @story.id 
+    @vote.user = current_user
+    @vote.story = @story
     @vote.save
     redirect_to '/stories'
   end
