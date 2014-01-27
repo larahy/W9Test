@@ -24,6 +24,7 @@ describe 'Voting on stories' do
       visit '/stories'
       click_link 'Thumbs Up'
       expect(@story.votes.count).to eq(1)
+      expect(Story.all.count).to eq(1)
       expect(page).not_to have_content('Thumbs Up')   
     end
 

@@ -34,9 +34,11 @@ describe 'Viewing story' do
       fill_in 'Email', with: 'yo@yo.com'
       fill_in 'Password', with: '12345678'
       fill_in 'Password confirmation', with: '12345678'
+      click_button 'Sign up'
       click_link 'Share Story'
       fill_in 'Title', with: 'Hard Times'
       fill_in 'Url', with: 'http://www.literaturepage.com/read/dickens-hard-times-1.html'
+      click_button 'Share Story'
       expect(page).to have_content('Hard Times')
       click_button 'Delete Story' 
       expect(page).to have_content('No Stories Yet!')

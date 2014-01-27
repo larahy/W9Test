@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
     story.votes.find_by(user_id: id)
   end
 
+  
 end
