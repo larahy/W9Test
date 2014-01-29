@@ -23,5 +23,10 @@ class StoriesController < ApplicationController
     redirect_to '/stories'
   end
 
+  def search
+    @stories = Story.where("title ILIKE ?", "%#{params[:query]}%")
+    render 'index'
+  end
+
 
 end

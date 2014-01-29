@@ -4,14 +4,20 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.0.beta1'
 
+gem 'websocket-rails'
+gem 'thin'
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
-# For email sign up
+# For email and twitter sign up
 gem 'devise'
+gem 'omniauth-twitter'
+gem 'omniauth-gplus', '~> 1.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'bootstrap-sass', '~> 3.0.3.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

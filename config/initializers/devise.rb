@@ -12,6 +12,8 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
+  config.omniauth :twitter, Rails.application.secrets.twitter_consumer_key, Rails.application.secrets.twitter_consumer_secret
+  config.omniauth :gplus, Rails.application.secrets.gplus_key, Rails.application.secrets.gplus_secret
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -252,3 +254,6 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 end
+
+Devise::SessionsController.skip_before_action :nag_for_email
+Devise::RegistrationsController.skip_before_action :nag_for_email

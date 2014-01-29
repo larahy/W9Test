@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -16,13 +18,26 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      <li><a href="/stories/new">Share Story</a></li>
+      <li><a href="/stories/new">Share Story</a></li>    
     </ul>
+      <div class='search'>
+      <%= form_tag search_stories_path, method: :get do %>
+      <%= text_field_tag :query, nil, id: 'search' %>
+      <%= submit_tag 'Search' %>
+      <% end %>
+      </div>
     <ul class="nav navbar-nav navbar-right">
       <% if user_signed_in? %>
         <li><%= link_to('SIGN OUT', destroy_user_session_path, :method => :delete) %> </li>
       <% else %> 
         <li><%= link_to('SIGN IN', new_user_session_path) %> </li>
+        <li> <%= link_to user_omniauth_authorize_path(:twitter) do %><i class="fa fa-twitter fa-2x"></i>
+        <% end %>
+        </li>
+        <li><%= link_to user_omniauth_authorize_path(:gplus) do %>
+          <i class="fa fa-google-plus fa-2x"></i>
+        <% end %> 
+        </li>       
       <% end %>
       <% if user_signed_in? %>
         <li><%= link_to('EDIT DETAILS', edit_user_registration_path) %> </li>

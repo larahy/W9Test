@@ -1,13 +1,25 @@
- <div class="col-md-8">
-    <h1><%= link_to story.title, story.url %></h1>
-    <h2> <%= story.votes.count %></h2>
-    <h2> <%= story.hotness %>% HOT</h2>
-    <% if story.user == current_user %>
-    <p><%= button_to 'Delete Story', story_path(story), method: :delete %></p>
-    <% end %>
-    <% if current_user && current_user.find_vote_for(story) %>
-    <h2><%= link_to 'Thumbs Down', story_vote_path(story, current_user.find_vote_for(story)), method: :delete %></h2>
-    <% elsif current_user && !current_user.find_vote_for(story) %>
-    <h2><%= link_to 'Thumbs Up', story_votes_path(story),  method: :post %></h2>
-    <% end %>
- </div>
+     <div class='col-md-4'>
+        <div>
+        <%= image_tag story.image_url, class: 'surimage' %>
+        </div>
+        <p class='on_top'>
+            <%= link_to story.title, story.url, target: "_blank" %>
+        </p>
+        <p class='votes_count' data-id='<%= story.id %>'>
+            <%= story.votes.count %> Likes, <%= story.hotness %>% HOT <span class='glyphicon glyphicon-warning-sign'></span> 
+        </p>
+        <div class='on_top2'>
+            <% if current_user && current_user.find_vote_for(story) %>
+            <h2> <%= link_to story_vote_path(story, current_user.find_vote_for(story)), method: :delete do %><span class='glyphicon glyphicon-circle-arrow-down'></span>
+            <% end %>
+            </h2>
+            <% elsif current_user && !current_user.find_vote_for(story) %>
+            <h2><%= link_to story_votes_path(story),  method: :post do %> <span class='glyphicon glyphicon-circle-arrow-up'></span>
+            <% end %> 
+            </h2>
+            <% end %>
+            <% if story.user == current_user %>
+            <p><%= button_to 'Delete Story', story_path(story), method: :delete %></p>
+            <% end %>
+        </div>
+    </div>
