@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :stories do 
     resources :votes 
+    resources :charges
     collection do
       get :search
     end

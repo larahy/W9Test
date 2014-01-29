@@ -7,7 +7,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new params[:story].permit(:title, :url)
+    @story = Story.new params[:story].permit(:title, :url, :image_url, :price)
     @story.user = current_user
     @story.save 
     redirect_to '/stories'

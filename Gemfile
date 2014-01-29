@@ -7,6 +7,10 @@ gem 'rails', '4.1.0.beta1'
 gem 'websocket-rails'
 gem 'thin'
 
+# Payment processing 
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
+
 # Use postgresql as the database for Active Record
 gem 'pg'
 
