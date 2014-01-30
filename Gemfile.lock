@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/alexpeattie/heroku_secrets.git
+  revision: b0c5f0680c9e57f7749d404426b8841d6ffe0114
+  specs:
+    heroku_secrets (0.0.2)
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: c5edb730cbb6db7187bea8da24ae1fd7ce609969
   specs:
@@ -142,6 +148,11 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.0.beta1)
       sprockets-rails (~> 2.0.0)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (4.1.0.beta1)
       actionpack (= 4.1.0.beta1)
       activesupport (= 4.1.0.beta1)
@@ -225,12 +236,14 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  heroku_secrets!
   jbuilder (~> 1.2)
   jquery-rails
   omniauth-gplus (~> 1.0)
   omniauth-twitter
   pg
   rails (= 4.1.0.beta1)
+  rails_12factor
   rspec-rails
   sass-rails (~> 4.0.0.rc1)
   sdoc
