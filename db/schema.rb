@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140129210926) do
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "stories", force: true do |t|
-    t.string   "title"
+    t.text     "title"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"

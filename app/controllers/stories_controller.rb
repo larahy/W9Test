@@ -28,5 +28,9 @@ class StoriesController < ApplicationController
     render 'index'
   end
 
+  def show
+    @story = Story.find params[:id]
+  end 
+
 
 end

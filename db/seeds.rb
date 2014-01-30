@@ -35,6 +35,6 @@ user.password_confirmation = 'password'
 user.save!
 
 bungle.each do |title, image_url| 
-  Story.create(title: title, url: 'http://www.vivianmaier.com/gallery/street-5/', user_id: user.id, image_url: image_url)
+  Story.create(title: title, url: 'http://www.vivianmaier.com/gallery/street-5/', user_id: user.id, image_url: image_url, price: 100)
 end
 

@@ -3,7 +3,7 @@
         <%= image_tag story.image_url, class: 'surimage' %>
         </div>
         <p class='on_top'>
-            <%= link_to story.title, story.url, target: "_blank" %>
+            <%= link_to story.title, story %>
         </p>
         <p class='votes_count' data-id='<%= story.id %>'>
             <%= story.votes.count %> Likes, <%= story.hotness %>% HOT <span class='glyphicon glyphicon-warning-sign'></span> 
