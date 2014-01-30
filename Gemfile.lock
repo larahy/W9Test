@@ -239,6 +239,7 @@ DEPENDENCIES
   heroku_secrets!
   jbuilder (~> 1.2)
   jquery-rails
+  nokogiri
   omniauth-gplus (~> 1.0)
   omniauth-twitter
   pg

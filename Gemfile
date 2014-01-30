@@ -48,6 +48,7 @@ gem 'sdoc',          group: :doc, require: false
 gem 'spring',        group: :development
 gem 'heroku_secrets', github: 'alexpeattie/heroku_secrets'
 gem 'rails_12factor', group: :production
+gem 'nokogiri'
 
 group :test, :development do 
   gem 'rspec-rails'
