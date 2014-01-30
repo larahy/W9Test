@@ -1,7 +1,7 @@
 class Story < ActiveRecord::Base
   belongs_to :user
   has_many :votes
-  after_create :send_new_story_email
+  # after_create :send_new_story_email
 
   def self.most_popular(stories)
     stories.sort_by(&:vote_count)
