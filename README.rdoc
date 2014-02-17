@@ -1,28 +1,17 @@
-== README
+WEEK NINE -- Friday Test -- Set by @alexpeattie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+========================
 
-Things you may want to cover:
+Task was to mimick a story sharing website like Reddit.  
 
-* Ruby version
+The application was built in Rails and used PostgreSQL, JavaScript, HTML, CSS and WebSockets
 
-* System dependencies
+User management was implemented with Devise, as well as Twitter and Google+ OnmiAuth.  
 
-* Configuration
+In order to practice using Nokogiri I extended this to include photographs, and seeded my database with images, title and links to Vivien Maier's photography site.  These could then be upvoted or downvoted, and prints ordered and paid for using Stripe. 
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The website is visible at http://glacial-basin-8458.herokuapp.com/
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+
+
